@@ -90,6 +90,7 @@ RUN apt-get --purge -y remove haskell-platform \
  && apt-get -y autoremove
 
 RUN rm -fr /root/tmp/*
+RUN rm -fr /tmp/*
 
 RUN rm -rf /var/lib/apt/lists/*
 
