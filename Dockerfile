@@ -36,34 +36,6 @@ RUN mkdir /root/tmp/ghc784 \
  && rm -fr /root/tmp/* \
  && rm -fr /tmp/*
 
-# # cabal-install
-# WORKDIR /root/tmp
-
-# RUN git clone https://github.com/haskell/cabal.git
-
-# WORKDIR cabal
-# RUN git checkout tags/cabal-install-v1.22.0.0
-# WORKDIR cabal-install
-# RUN ./bootstrap.sh
-
-# ENV PATH /root/.cabal/bin:$PATH
-
-# # Updating Cabal library
-# RUN cabal update
-# RUN cabal install Cabal-1.22.0.0 \
-#  && ghc-pkg hide Cabal-1.18.1.5
-
-# RUN cabal --version
-# RUN ghc-pkg list Cabal
-
-
-# RUN for pkg in `ghc-pkg --user list  --simple-output`; \
-#       do ghc-pkg unregister --force $pkg; \
-#     done
-
-# Cleanup
-
-
 RUN ghc --version
 
 CMD ["ghci"]
