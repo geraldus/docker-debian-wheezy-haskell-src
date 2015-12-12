@@ -42,3 +42,16 @@ CMD ["ghci"]
 
 
 # <thomie> Geraldus: don't select BuildFlavour=devel2 for release builds
+#
+# <thomie> Geraldus: these are release settings:
+# https://ghc.haskell.org/trac/ghc/wiki/MakingReleases?version=40#Makingthebinarybuilds
+#
+# <thomie> Geraldus: either rebuild with `BUILD_PROF_LIBS = YES` in your
+# mk/build.mk file, or install from here
+# https://launchpad.net/~hvr/+archive/ubuntu/ghc, or turn off profiling in
+# your .cabal/config file
+#
+# <thomie> Geraldus: sorry, not sure if that option exists in ghc-7.10 actually
+#
+# <thomie> Geraldus: oh, it should be the default, GhcLibWays += p in
+# mk/config.mk, so I don't know what's wrong with your build
