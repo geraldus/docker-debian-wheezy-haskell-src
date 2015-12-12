@@ -36,6 +36,8 @@ RUN mkdir /root/tmp/ghc784 \
  && rm -fr /root/tmp/* \
  && rm -fr /tmp/*
 
+WORKDIR /root
+
 RUN ghc --version
 
 CMD ["ghci"]
