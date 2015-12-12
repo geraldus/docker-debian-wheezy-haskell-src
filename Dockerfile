@@ -22,7 +22,6 @@ RUN mkdir /root/tmp/ghc784 \
  && tar --strip-components=1 -xjvf ghc-7.10.3a-src.tar.bz2 \
  && rm ghc-7.10.3a-src.tar.bz2 \
  && cp mk/build.mk.sample mk/build.mk \
- && sed -i "s/#BuildFlavour = devel2/BuildFlavour = devel2/" mk/build.mk \
  && ./boot \
  && ./configure \
  && make \
@@ -68,3 +67,6 @@ RUN mkdir /root/tmp/ghc784 \
 RUN ghc --version
 
 CMD ["ghci"]
+
+
+# <thomie> Geraldus: don't select BuildFlavour=devel2 for release builds
