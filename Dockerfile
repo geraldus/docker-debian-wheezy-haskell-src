@@ -29,21 +29,19 @@ RUN mkdir /root/tmp/ghc784 \
  && make \
  && make install \
  && rm -fr /usr/src/ghc \
- && rm -rf /usr/local/lib/ghc-7.8.4 \
+ && rm -fr /usr/local/lib/ghc-7.8.4 \
  && rm /usr/local/bin/ghc-7.8.4 \
        /usr/local/bin/ghci-7.8.4 \
        /usr/local/bin/ghc-pkg-7.8.4 \
        /usr/local/bin/haddock-ghc-7.8.4 \
        /usr/local/bin/runghc-7.8.4 \
- && rm -fr /root/tmp/* \
- && rm -fr /tmp/*
+ && rm -fr /root/tmp/* /tmp/* /var/tmp/*
 
 WORKDIR /home/stack
 USER stack
 RUN ghc --version
 
 CMD ["ghci"]
-
 
 # <thomie> Geraldus: don't select BuildFlavour=devel2 for release builds
 #
